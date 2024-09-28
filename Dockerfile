@@ -52,6 +52,9 @@ RUN wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/ch
 # Add ChromeDriver to PATH
 ENV PATH="/usr/local/bin/chromedriver:${PATH}"
 
+# Check Chrome and ChromeDriver versions
+RUN google-chrome --version && chromedriver --version
+
 # Set DISPLAY environment variable
 ENV DISPLAY=:99
 
