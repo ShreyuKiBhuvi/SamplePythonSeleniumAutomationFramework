@@ -32,22 +32,19 @@ RUN apt-get update && \
         xdg-utils \
         && rm -rf /var/lib/apt/lists/*
 
-# Specify versions for Chrome and ChromeDriver
-ENV CHROME_VERSION=129.0.6668.70-1
-ENV CHROMEDRIVER_VERSION=129.0.6668.70
-
 # Install Google Chrome
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
-    apt-get update && \
-    apt-get install -y google-chrome-stable=$CHROME_VERSION
+RUN wget -q -O chrome.zip https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.70/linux64/chrome-linux64.zip && \
+    unzip chrome.zip -d /opt/ && \
+    rm chrome.zip && \
+    mv /opt/chrome-linux64 /opt/google-chrome && \
+    ln -s /opt/google-chrome/chrome /usr/bin/google-chrome
 
 # Install ChromeDriver
-RUN wget -N https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
-    unzip chromedriver_linux64.zip && \
-    mv chromedriver /usr/local/bin/chromedriver && \
-    chmod +x /usr/local/bin/chromedriver && \
-    rm chromedriver_linux64.zip
+RUN wget -q -O chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.70/linux64/chromedriver-linux64.zip && \
+    unzip chromedriver.zip -d /opt/ && \
+    rm chromedriver.zip && \
+    mv /opt/chromedriver /usr/local/bin/chromedriver && \
+    chmod +x /usr/local/bin/chromedriver
 
 # Add ChromeDriver to PATH
 ENV PATH="/usr/local/bin/chromedriver:${PATH}"
