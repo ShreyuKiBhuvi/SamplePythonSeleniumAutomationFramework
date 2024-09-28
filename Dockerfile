@@ -1,4 +1,3 @@
-# Use the official Python image from the Docker Hub
 FROM python:3.12.6-slim
 
 # Set the working directory
@@ -49,6 +48,9 @@ RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_R
 
 # Add ChromeDriver to PATH
 ENV PATH="/usr/local/bin/chromedriver:${PATH}"
+
+# Set DISPLAY environment variable
+ENV DISPLAY=:99
 
 # Clone the GitHub repository
 RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git /temp_dir && \
