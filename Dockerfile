@@ -4,9 +4,10 @@ FROM python:3.12.6-slim
 # Set the working directory
 WORKDIR /app
 
-# Install Chrome, ChromeDriver, and system dependencies
+# Install gnupg, Chrome, ChromeDriver, and other system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        gnupg \
         git \
         wget \
         curl \
