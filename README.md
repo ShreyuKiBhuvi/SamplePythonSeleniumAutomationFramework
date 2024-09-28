@@ -1,4 +1,4 @@
-# Test Automation Framework
+<img width="169" alt="image" src="https://github.com/user-attachments/assets/ee6d1d3a-ebbc-46d0-af0c-fefa2dc77762"># Test Automation Framework
 
 This is a Selenium-based automation framework designed for testing the user journey flows in an e-commerce website.
 
@@ -36,6 +36,7 @@ This setup is scalable and can be integrated easily into any CI/CD pipeline for 
 ├── README.md
 └── pytest.ini
 └── requirements.txt
+
 
 ## Setup Instructions
 
