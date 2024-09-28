@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from Utilities.general_utils import GeneralUtils
-from POMFiles.element_locators import CommonLocators
+
 
 
 class CommonPageMethods:
@@ -90,5 +90,13 @@ class CommonPageMethods:
                 raise ValueError(f"Unsupported selection method: {select_by}")
         except NoSuchElementException:
             raise Exception(f"Dropdown element not found using {locator_type}: {locator}")
+
+    def click_browser_back_button(self, driver):
+        """Navigate back to the previous page in the browser's history."""
+        try:
+            driver.back()  # Simulates a click on the browser's back button
+            print("Navigated back to the previous page.")
+        except Exception as e:
+            print(f"An error occurred while trying to go back: {e}")
 
 

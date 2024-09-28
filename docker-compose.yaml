@@ -8,5 +8,5 @@ services:
     volumes:
       - ./results:/app/allure-results  # Persist allure results to host directory
     environment:
-      - GITHUB_REPO=<your-github-repo-url>
+      - GITHUB_REPO=https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git
     command: ["pytest", "--html=report.html", "--alluredir=allure-results"]  # Overriding CMD if necessary

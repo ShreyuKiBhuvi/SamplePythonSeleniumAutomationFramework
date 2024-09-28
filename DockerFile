@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 # Clone the GitHub repository
 # Replace <your-github-repo-url> with your actual repository URL
-RUN git clone <your-github-repo-url> .
+RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt

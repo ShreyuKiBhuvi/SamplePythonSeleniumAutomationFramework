@@ -13,3 +13,5 @@ class LoginPage(CommonPageMethods):
         self.enter_text(LoginPageLocators.PASSWORD_INPUT["locator"], "secret_sauce", LoginPageLocators.PASSWORD_INPUT["type"])
         self.click(LoginPageLocators.LOGIN_BUTTON["locator"], LoginPageLocators.LOGIN_BUTTON["type"])
         self.validate_page_title(HomePageLocators.expected_title)
+
+
