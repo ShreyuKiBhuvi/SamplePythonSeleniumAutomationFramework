@@ -3,6 +3,8 @@ from POMFiles.login_page import LoginPage
 from POMFiles.home_page import HomePage
 from POMFiles.shopping_cart import ShoppingCart
 
+"""This test case tests the complete checkout flow after placing an item in the cart"""
+
 @pytest.mark.usefixtures("setup")
 class TestFinishCheckoutFlow:
     def test_checkout_flow(self):

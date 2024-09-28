@@ -1,5 +1,7 @@
+"""This files serves as a central repository for all locators and other variables"""
 
 class CommonLocators:
+    APP_URL = "https://www.saucedemo.com/"
     LOGIN_LOGO = {"locator": ".//div[@class = 'login_logo' and text()='Swag Labs']",
                 "type": "xpath"}
     APP_LOGO = {
@@ -7,6 +9,8 @@ class CommonLocators:
         "type": "xpath"}
 
 class LoginPageLocators:
+    USERNAME = "standard_user"
+    PASSWORD = "secret_sauce"
     USERNAME_INPUT = {"locator": "user-name", "type": "id"}
     PASSWORD_INPUT = {"locator": "password", "type": "id"}
     LOGIN_BUTTON = {"locator": "login-button", "type": "id"}

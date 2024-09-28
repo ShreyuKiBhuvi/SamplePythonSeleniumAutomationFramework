@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from Utilities.general_utils import GeneralUtils
 
-
+"""This files serves as a repository for all common methods"""
 
 class CommonPageMethods:
     def __init__(self, driver):
@@ -13,6 +13,7 @@ class CommonPageMethods:
 
 
     def get_element_locator_type(self, locator_type):
+        """Retrieve the locator type so that it can be used as parameter value"""
         locator_type = locator_type.lower()
         if locator_type == "id":
             return By.ID
@@ -48,6 +49,7 @@ class CommonPageMethods:
             return False
 
     def validate_page_title(self, expected_title, timeout=10):
+        """Validate if the Page title of any page is accurate"""
         try:
             title_element = self.wait_for_element('//*[@data-test="title"]', locator_type='xpath', timeout=timeout)
             actual_title = title_element.text.strip()  # Get the text and remove any leading/trailing whitespace
@@ -72,6 +74,7 @@ class CommonPageMethods:
         element.send_keys(text)
 
     def select_from_dropdown(self, locator, select_by="visible_text", value=None, locator_type="xpath", timeout=10):
+        """Select an element from dropdown"""
         try:
             # Wait for the dropdown to be present on the page
             dropdown_element = self.wait_for_element(locator, locator_type, timeout)

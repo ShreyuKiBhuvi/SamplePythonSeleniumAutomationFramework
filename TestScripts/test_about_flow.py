@@ -4,6 +4,8 @@ from POMFiles.login_page import LoginPage
 from POMFiles.home_page import HomePage
 from POMFiles.shopping_cart import ShoppingCart
 
+"""This test case tests the About link in the Hamburger menu and the traverse back into the application"""
+
 @pytest.mark.usefixtures("setup")
 class TestAboutFlow:
     def test_about_link_flow(self):
