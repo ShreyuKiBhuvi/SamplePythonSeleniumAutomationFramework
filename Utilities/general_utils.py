@@ -13,6 +13,7 @@ class GeneralUtils:
             chrome_options.add_argument("--headless")  # Run in headless mode
             chrome_options.add_argument("--no-sandbox")  # Overcome limited resource problems
             chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+            chrome_options.add_argument("--disable-gpu")  # Applicable to Windows, prevent GPU hardware acceleration
             chrome_options.add_argument("--remote-debugging-port=9222")  # Enable remote debugging
             driver = webdriver.Chrome(service=Service(), options=chrome_options)
         elif browser_name.lower() == "firefox":
