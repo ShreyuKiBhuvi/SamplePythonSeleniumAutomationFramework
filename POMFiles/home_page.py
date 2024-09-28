@@ -3,8 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from POMFiles.common_page_methods import CommonPageMethods
 from POMFiles.element_locators import HomePageLocators
 from selenium.webdriver.support import expected_conditions as EC
-
-from element_locators import CommonLocators
+from POMFiles.element_locators import CommonLocators
 
 
 class HomePage(CommonPageMethods):

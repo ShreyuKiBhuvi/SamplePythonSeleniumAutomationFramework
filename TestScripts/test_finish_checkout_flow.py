@@ -1,5 +1,4 @@
 import pytest
-from POMFiles.common_page_methods import CommonPageMethods
 from POMFiles.login_page import LoginPage
 from POMFiles.home_page import HomePage
 from POMFiles.shopping_cart import ShoppingCart
@@ -21,3 +20,4 @@ class TestFinishCheckoutFlow:
         shpcart.click_continue()
         shpcart.verify_item_added_to_cart("Sauce Labs Backpack")
         shpcart.click_finish()
+        homepg.logout()

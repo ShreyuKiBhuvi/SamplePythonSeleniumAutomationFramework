@@ -91,10 +91,10 @@ class CommonPageMethods:
         except NoSuchElementException:
             raise Exception(f"Dropdown element not found using {locator_type}: {locator}")
 
-    def click_browser_back_button(self, driver):
+    def click_browser_back_button(self):
         """Navigate back to the previous page in the browser's history."""
         try:
-            driver.back()  # Simulates a click on the browser's back button
+            self.driver.back()  # Simulates a click on the browser's back button
             print("Navigated back to the previous page.")
         except Exception as e:
             print(f"An error occurred while trying to go back: {e}")

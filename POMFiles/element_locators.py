@@ -22,7 +22,7 @@ class HomePageLocators:
     PRODUCT_SORT_DROPDOWN = {"locator": ".//*[contains(@data-test, 'product-sort-container')]", "type": "xpath"}
     INVENTORY_NAME_LABEL = {"locator": ".//*[contains(@data-test, 'inventory-item-name')]", "type": "xpath"}
     ABOUT_PAGE_TITLE = {"locator": ".//title[contains(text(), 'Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing')]", "type": "xpath"}
-    LOGOUT_BUTTON = {"locator": ".//a[contains(text(), 'Logout')]", "type": "id"}
+    LOGOUT_BUTTON = {"locator": ".//a[contains(text(), 'Logout')]", "type": "xpath"}
 
 class ShoppingCartLocators:
     expected_title = "Your Cart"

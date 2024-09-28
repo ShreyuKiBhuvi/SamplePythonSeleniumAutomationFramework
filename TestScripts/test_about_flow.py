@@ -15,7 +15,8 @@ class TestAboutFlow:
         homepg.click_hamburger_menu_about()
         common = CommonPageMethods(self.driver)
         common.click_browser_back_button()
-        common.validate_page_title("Product")
+        common.validate_page_title("Products")
+        homepg.logout()
 
 
 
