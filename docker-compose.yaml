@@ -9,4 +9,4 @@ services:
       - ./results:/app/allure-results  # Persist allure results to host directory
     environment:
       - GITHUB_REPO=https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git
-    command: ["pytest", "--html=/app/results/report.html", "--alluredir=/app/results/allure-results"]
+    command: ["pytest", "-n", "auto", "--html=/app/results/report.html", "--alluredir=/app/results/allure-results"]
