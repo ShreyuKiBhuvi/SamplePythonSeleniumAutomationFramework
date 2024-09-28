@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  test_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./results:/app/allure-results  # Persist allure results to host directory
+    environment:
+      - GITHUB_REPO=<your-github-repo-url>
+    command: ["pytest", "--html=report.html", "--alluredir=allure-results"]  # Overriding CMD if necessary

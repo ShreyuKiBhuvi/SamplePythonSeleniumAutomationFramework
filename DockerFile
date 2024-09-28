@@ -1,0 +1,21 @@
+# Use the official Python image from the Docker Hub
+FROM python:3.12.6-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Clone the GitHub repository
+# Replace <your-github-repo-url> with your actual repository URL
+RUN git clone <your-github-repo-url> .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Command to run your tests
+CMD ["pytest", "--html=report.html", "--alluredir=allure-results"]
