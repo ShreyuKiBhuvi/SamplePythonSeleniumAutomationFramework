@@ -23,6 +23,8 @@ RUN apt-get update && \
         libdbus-1-3 \
         libgdk-pixbuf2.0-0 \
         libglib2.0-0 \
+        libgbm-dev \
+        libxshmfence-dev \
         libnss3 \
         libx11-xcb1 \
         libxcomposite1 \
