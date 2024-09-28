@@ -1,4 +1,4 @@
-<img width="169" alt="image" src="https://github.com/user-attachments/assets/ee6d1d3a-ebbc-46d0-af0c-fefa2dc77762"># Test Automation Framework
+# Test Automation Framework
 
 This is a Selenium-based automation framework designed for testing the user journey flows in an e-commerce website.
 
@@ -13,29 +13,7 @@ This automation framework provides:
 This setup is scalable and can be integrated easily into any CI/CD pipeline for continuous testing, ensuring quality and stability for e-commerce flows.
 
 # Test Automation Framework Structure
-/pythonProject
-│
-├── /POMFiles
-│   ├── __init__.py
-│   └── common_page_methods.py
-|   └── element_locators.py
-|   └── home_page.py
-|   └── login_page.py
-|   └── shopping_cart.py
-│
-├── /TestScripts
-│   ├── test_about_flow.py
-│   └── test_finish_checkout_flow.py
-│
-├── /Utilities
-│   ├── general_utils.py
-│
-├── conftest.py
-├── docker-compose.yaml
-├── Dockerfile
-├── README.md
-└── pytest.ini
-└── requirements.txt
+<img width="169" alt="image" src="https://github.com/user-attachments/assets/ee6d1d3a-ebbc-46d0-af0c-fefa2dc77762">
 
 
 ## Setup Instructions
