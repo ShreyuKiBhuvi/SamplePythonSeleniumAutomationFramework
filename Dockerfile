@@ -43,7 +43,7 @@ RUN wget -q -O chrome.zip https://storage.googleapis.com/chrome-for-testing-publ
 RUN wget -q -O chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/129.0.6668.70/linux64/chromedriver-linux64.zip && \
     unzip chromedriver.zip -d /opt/ && \
     rm chromedriver.zip && \
-    mv /opt/chromedriver /usr/local/bin/chromedriver && \
+    mv /opt/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
     chmod +x /usr/local/bin/chromedriver
 
 # Add ChromeDriver to PATH
