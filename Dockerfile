@@ -4,7 +4,7 @@ FROM python:3.12.6-slim
 # Set the working directory
 WORKDIR /app
 
-# Install gnupg, Chrome, ChromeDriver, and other system dependencies
+# Install necessary system dependencies
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         gnupg \
@@ -16,6 +16,21 @@ RUN apt-get update && \
         libxi6 \
         libgconf-2-4 \
         default-jdk \
+        fonts-liberation \
+        libappindicator3-1 \
+        libatk-bridge2.0-0 \
+        libatk1.0-0 \
+        libcups2 \
+        libdbus-1-3 \
+        libgdk-pixbuf2.0-0 \
+        libglib2.0-0 \
+        libnss3 \
+        libx11-xcb1 \
+        libxcomposite1 \
+        libxrandr2 \
+        libxss1 \
+        libxtst6 \
+        xdg-utils \
         && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome
@@ -36,7 +51,6 @@ RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_R
 ENV PATH="/usr/local/bin/chromedriver:${PATH}"
 
 # Clone the GitHub repository
-# Use a temporary directory for cloning
 RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git /temp_dir && \
     cp -r /temp_dir/* . && \
     rm -rf /temp_dir
@@ -45,4 +59,4 @@ RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFra
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run your tests
-CMD ["pytest", "--html=report.html", "--alluredir=allure-results"]
+CMD ["xvfb-run", "-a", "pytest", "--html=report.html", "--alluredir=allure-results"]
