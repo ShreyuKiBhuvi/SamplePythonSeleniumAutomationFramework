@@ -66,4 +66,4 @@ RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFra
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run your tests
-CMD ["xvfb-run", "-a", "pytest", "--html=report.html", "--alluredir=allure-results"]
+CMD ["xvfb-run", "-a", "pytest", "-n", "auto", "--html=report.html", "--alluredir=allure-results"]
