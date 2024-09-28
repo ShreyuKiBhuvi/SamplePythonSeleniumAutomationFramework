@@ -33,7 +33,7 @@ RUN apt-get update && \
         && rm -rf /var/lib/apt/lists/*
 
 # Specify versions for Chrome and ChromeDriver
-ENV CHROME_VERSION=129.0.6668.70
+ENV CHROME_VERSION=129.0.6668.70-1
 ENV CHROMEDRIVER_VERSION=129.0.6668.70
 
 # Install Google Chrome
