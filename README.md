@@ -20,13 +20,13 @@ This setup is scalable and can be integrated easily into any CI/CD pipeline for 
 
 1. Clone the repository.
 2. CD into the project root 
-3. Run the below command in terminal. (Make sure you have docker installed.)
-   docker-compose build --no-cache
-   docker-compose up
+3. Run the below commands in terminal one after the other. (Make sure you have docker installed.)
+>> docker-compose build --no-cache
+>> docker-compose up
 
 ## Setup Instructions to run the project using terminal
 
 1. Clone the repository.
 2. CD into the project root 
 3. Run the below command in terminal. (Make sure you have all libraries mentioned in requirements.txt installed.)
-   pytest -n auto --html=report.html --alluredir=allure-results
+>> pytest -n auto --html=report.html --alluredir=allure-results
