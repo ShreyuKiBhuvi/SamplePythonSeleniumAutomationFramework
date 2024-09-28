@@ -36,8 +36,10 @@ RUN CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_R
 ENV PATH="/usr/local/bin/chromedriver:${PATH}"
 
 # Clone the GitHub repository
-# Replace <your-github-repo-url> with your actual repository URL
-RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git .
+# Use a temporary directory for cloning
+RUN git clone https://github.com/ShreyuKiBhuvi/SamplePythonSeleniumAutomationFramework.git /temp_dir && \
+    cp -r /temp_dir/* . && \
+    rm -rf /temp_dir
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
